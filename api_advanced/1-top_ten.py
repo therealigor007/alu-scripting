@@ -2,7 +2,6 @@
 """Prints the title of the first 10 hot posts listed for a given subreddit"""
 
 import requests
-import sys
 
 
 def top_ten(subreddit):
@@ -28,8 +27,3 @@ def top_ten(subreddit):
             print(post.get('data').get('title'))
     except Exception:
         print(None)
-
-
-if __name__ == "__main__":
-    # Example usage - you can change this to any subreddit
-    top_ten("python")
