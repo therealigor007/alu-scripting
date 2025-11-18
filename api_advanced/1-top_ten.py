@@ -2,6 +2,7 @@
 """Prints the title of the first 10 hot posts listed for a given subreddit"""
 
 import requests
+import sys
 
 
 def top_ten(subreddit):
@@ -23,7 +24,8 @@ def top_ten(subreddit):
             return
 
         HOT_POSTS = RESPONSE.json().get("data").get("children")
-        [print(post.get('data').get('title')) for post in HOT_POSTS]
+        for post in HOT_POSTS:
+            print(post.get('data').get('title'))
     except Exception:
         print(None)
 
